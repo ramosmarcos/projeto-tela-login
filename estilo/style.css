@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+/* MOBILE FIRST */
+
+:root {
+    --cor0: #83de8c;                                             
+    --cor1: #016a73;
+    --cor2: #540D6E;
+    --cor3: #E0FF4F;
+    --cor4: #ECBA82;
+    --fonte: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--fonte);
+    box-sizing: border-box; /* Para a borda fazer parte da conta da largura/altura - importante sempre resetar isso colocando este elemento border-box*/
+}
+
+body, html {
+    background-image: linear-gradient(45deg, #540D6E, #016a73);
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+section#login {
+    position: absolute;         /* ISSO TUDO FAZ COM QUE O ELEMENTO FIQUE NO MEIO DA TELA, SEMPRE */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+
+    background-color: white;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.473);
+    width: 250px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;        /*Isso faz com que tudo o que está fora da borda fique escondido - usado aqui para que a borda de cima, onde temos uma imagem, fique arredondada, com o border radius desta section mãe */
+
+    transition: width 0.5s, height 0.5s;  
+    transition-timing-function: ease;
+    /* ESTE DOIS ELEMENTOS GERAM A TRANSIÇÃO BONITA DE POSIÇÃO - ESTÁ ATRELADO AUTOMATICAMENTE AO MEDIA-QUERY */
+}
+
+div#imagem {
+    display: block;
+    background-image: url(../imagens/imagem.jpg);
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+div#formulario {
+    display: block;
+    padding: 10px;
+}
+
+div#formulario > h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+div#formulario > p {
+    font-size: .8em;
+    text-align: justify;
+    margin-bottom: 7px;
+}
+
+div.campo {
+    background-color: #540D6E;
+    border: 2px solid #540D6E;
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    margin: 5px 0px ;
+}
+
+div.campo > span {
+    color: white;
+    font-size: 1.7em;
+    width: 40px;
+    padding: 5px;
+}
+
+div.campo > input {
+    background-color: var(--cor0);
+    font-size: 1em;
+    width: calc(100% - 45px);
+    height: 100%;
+    border: 0px;
+    border-radius: 8px;
+    padding-left: 6px;
+    transform: translateY(-7px);
+}
+
+div.campo > input:focus-within {
+    background-color: white;
+    outline: none
+}
+
+form label {
+    display: none;
+}
+
+form > input[type=submit] {
+    display: block;
+    font-size: 1em;
+    width: 100%;
+    height: 40px;
+    background-color: var(--cor1);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+form > input[type=submit]:hover {
+    background-color: #053d42;
+}
+
+form > a.botao {
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+    height: 40px;
+    padding-top: 7px;
+    background-color: white;
+    color: #03484e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 5px;
+    border: 1px solid #016a73;
+}
+
+form > a.botao:hover {
+    background-color: #053d42;
+    color: white;
+}
